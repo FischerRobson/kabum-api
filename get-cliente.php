@@ -12,7 +12,29 @@
     $result_cliente = $conn->prepare($query_cliente);
     $result_cliente->bindParam(':id', $id, PDO::PARAM_INT);
     $result_cliente->execute();
-    
+    /* -------------------------------------------------------------------- */
+    $query_enderecos = "SELECT * FROM enderecos WHERE Cliente_id= :id";
+    $result_enderecos = $conn->prepare($query_enderecos);
+    $result_enderecos->bindParam(':id', $id, PDO::PARAM_INT);
+    $result_enderecos->execute();
+
+    if(($result_enderecos) AND ($result_enderecos->rowCount() != 0)){
+        while($row_enderecos = $result_enderecos->fetch(PDO::FETCH_ASSOC)){
+            extract($row_enderecos);
+
+            $list_enderecos[$Id] = [
+                'id' => $Id,
+                'logradouro' => $Logradouro,
+                'bairro' => $Bairro,
+                'cidade' => $Cidade,
+                'uf' => $Uf,
+                'complemento' => $Complemento,
+                'numero' => $Numero,
+                'cep' => $Cep,
+            ];
+        }
+    }
+    /* -------------------------------------------------------------------- */
     if(($result_cliente) AND ($result_cliente->rowCount() != 0)){
         $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
         extract($row_cliente);
@@ -23,8 +45,8 @@
             'dataNascimento' => $DataNascimento,
             'cpf' => $Cpf,
             'rg' => $Rg,
-            'telefone' => $Telefone
-
+            'telefone' => $Telefone,
+            'enderecos' => $list_enderecos
         ];
     
         $response = [

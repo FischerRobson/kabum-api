@@ -12,12 +12,12 @@
 
     if($data){
 
-        $query_clientes = "INSERT INTO clientes 
+        $query_cliente = "INSERT INTO clientes 
                                 (Nome, DataNascimento, Cpf, Rg, Telefone)
                                 VALUES
                                 (:nome, :data_nasc, :cpf, :rg, :tel)";
         
-        $cadastrar_cliente = $conn -> prepare($query_clientes);
+        $cadastrar_cliente = $conn -> prepare($query_cliente);
 
         $cadastrar_cliente->bindParam(':nome', $data['nome']);
         $cadastrar_cliente->bindParam(':data_nasc', $data['dataNascimento']);
