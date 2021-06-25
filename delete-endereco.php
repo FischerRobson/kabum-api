@@ -9,11 +9,11 @@
 
     $response = "";
 
-    $query_cliente = "DELETE FROM clientes WHERE Id=:id LIMIT 1";
-    $delete_cliente = $conn->prepare($query_cliente);
-    $delete_cliente->bindParam(':id', $id, PDO::PARAM_INT);
+    $query_endereco = "DELETE FROM enderecos WHERE Id=:id LIMIT 1";
+    $delete_endereco = $conn->prepare($query_endereco);
+    $delete_endereco->bindParam(':id', $id, PDO::PARAM_INT);
 
-    if($delete_cliente->execute()){
+    if($delete_endereco->execute()){
         $response = [
             "error" => false,
         ];

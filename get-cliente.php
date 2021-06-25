@@ -18,6 +18,8 @@
     $result_enderecos->bindParam(':id', $id, PDO::PARAM_INT);
     $result_enderecos->execute();
 
+    $list_enderecos = [];
+
     if(($result_enderecos) AND ($result_enderecos->rowCount() != 0)){
         while($row_enderecos = $result_enderecos->fetch(PDO::FETCH_ASSOC)){
             extract($row_enderecos);
