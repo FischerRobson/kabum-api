@@ -13,6 +13,13 @@
     $delete_cliente = $conn->prepare($query_cliente);
     $delete_cliente->bindParam(':id', $id, PDO::PARAM_INT);
 
+    /* -------------------------------------------------------------- */
+
+    $query_enderecos = "DELETE FROM enderecos WHERE Cliente_id=:id";
+    $delete_enderecos = $conn->prepare($query_enderecos);
+    $delete_enderecos->bindParam(':id', $id, PDO::PARAM_INT);
+    $delete_enderecos->execute();
+
     if($delete_cliente->execute()){
         $response = [
             "error" => false,

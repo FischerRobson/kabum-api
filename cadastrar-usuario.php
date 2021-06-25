@@ -7,8 +7,6 @@
 
     include("connection.php");
 
-    include 'assets/encrypt.php';
-
     $response_json = file_get_contents("php://input");
     $data = json_decode($response_json, true);
 
