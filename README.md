@@ -45,6 +45,21 @@
       <img src="https://lh3.googleusercontent.com/-pjAqZBFNhJ4/UUNrea0oCGI/AAAAAAAAGag/xEhSJfgy4As/s545/phpmyadmin_login.png" alt="login no pgpmyadmin" />
     </li>
     <li>Clique para criar um novo banco de dados<br/>
-      <img src="https://lh3.googleusercontent.com/-pjAqZBFNhJ4/UUNrea0oCGI/AAAAAAAAGag/xEhSJfgy4As/s545/phpmyadmin_login.png" alt="login no pgpmyadmin" />  
-   </li>
+      <img src=".github/criar_banco.png" alt="login no pgpmyadmin" />  
+    </li>
+    <li>Crie o novo banco com o nome: kabum<br/>
+      <img src=".github/criando_banco.png" alt="login no pgpmyadmin" />  
+    </li>
+    <li>Faça a importação do arquivo db.sql dentro do banco, para isso clique no banco kabum e escolha a opção importar<br/>
+      <img src=".github/importar.png" alt="login no pgpmyadmin" />  
+    </li>
+    <li>Clique na opção Escolher arquivo<br/>
+      <img src=".github/escolher_arquivo.png" alt="login no pgpmyadmin" />  
+    </li>
+    <li>Selecione o arquivo db.sql<br/>
+      <img src=".github/arquivo.png" alt="login no pgpmyadmin" />  
+    </li>
+    <li>Clique em executar para finalizar a importação<br/>
+      <img src=".github/executar.png" alt="login no pgpmyadmin" />  
+    </li>
   </ul>
