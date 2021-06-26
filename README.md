@@ -44,4 +44,7 @@
     <li>Faça login com o usuário "root" e a senha deixe em branco: <br />
       <img src="https://lh3.googleusercontent.com/-pjAqZBFNhJ4/UUNrea0oCGI/AAAAAAAAGag/xEhSJfgy4As/s545/phpmyadmin_login.png" alt="login no pgpmyadmin" />
     </li>
+    <li>Clique para criar um novo banco de dados<br/>
+      <img src="https://lh3.googleusercontent.com/-pjAqZBFNhJ4/UUNrea0oCGI/AAAAAAAAGag/xEhSJfgy4As/s545/phpmyadmin_login.png" alt="login no pgpmyadmin" />  
+   </li>
   </ul>
