@@ -64,4 +64,9 @@
       <img src=".github/executar.png" alt="login no pgpmyadmin" />  
     </li>
   </ul>
-<p>5 - Após finalziar a criação do banco de dados, basta seguir e clonar o repositório do <a href="https://github.com/FischerRobson/kabum-desafio">front-end</a> </p>
+  <p>5 - Agora basta fazer o clone desse repositório em ~\wamp64\www  </p>
+  
+  ```bash
+git clone https://github.com/FischerRobson/kabum-desafio.git
+```
+<p>6 - Após finalziar a criação do banco de dados, basta seguir e clonar o repositório do <a href="https://github.com/FischerRobson/kabum-desafio">front-end</a> </p>
