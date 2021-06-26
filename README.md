@@ -35,9 +35,9 @@
 
 <h3>Iniciar o Projeto: </h3>
 
-  <p>1 - Primeiro deve ser feita a instalação de um servidor PHP local, como por exemplo o WampServer, para baixa-lo basta clicar em Download no link abaixo: https://sourceforge.net/projects/wampserver/ </p>
-  <p>2 - Tendo feito o download do WampServer, basta seguir a instalação e marcar para instalar o banco de dados MySQL na versão 8.0, deixe a porta do MySQL por padrão na 3306</p>
-  <p>3 - Execute o WampServer e seus serviços</p>
+  <p>1 - Primeiro deve ser feita a instalação de um servidor PHP local, como por exemplo o WampServer ou Xampp, para baixar um dos dois, basta clicar em Download no link abaixo: <br/>  https://sourceforge.net/projects/wampserver/ <br/> https://www.apachefriends.org/pt_br/index.html </p>
+  <p>2 - Tendo feito o download do WampServer, basta seguir a instalação e marcar para instalar o banco de dados MySQL na versão 8.0, deixe a porta do MySQL por padrão na 3306. No caso do Xampp, basta seguir com a instalação.</p>
+  <p>3 - Execute o WampServer/Xampp e seus serviços</p>
   <p>4 - Após isso, será necessário rodar o comando para criar o banco de dados no seu computador, para isso: </p>
   <ul>
     <li>Abra seu navegador</li>
@@ -51,7 +51,7 @@
     <li>Crie o novo banco com o nome: kabum<br/>
       <img src=".github/criando_banco.png" alt="login no pgpmyadmin" />  
     </li>
-    <li>Faça a importação do arquivo db.sql dentro do banco, para isso clique no banco kabum e escolha a opção importar<br/>
+    <li>Faça a importação do arquivo db.sql (Wamp) ou do db_xampp.sql (Xampp) dentro do banco, para isso clique no banco kabum e escolha a opção importar<br/>
       <img src=".github/importar.png" alt="login no pgpmyadmin" />  
     </li>
     <li>Clique na opção Escolher arquivo<br/>
