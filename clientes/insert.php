@@ -5,30 +5,29 @@
     header("Access-Control-Allow-Headers: *");
     header("Access-Control-Allow-Methods: GET,PUT,POST,DELETE");
 
-    include("connection.php");
+    include("../connection.php");
 
     $response_json = file_get_contents("php://input");
     $data = json_decode($response_json, true);
 
     if($data){
 
-        $password = $data['password'];
-
-        $query_users = "INSERT INTO users 
-                                (Username, Password, Nivel)
+        $query_cliente = "INSERT INTO clientes 
+                                (Nome, DataNascimento, Cpf, Rg, Telefone)
                                 VALUES
-                                (:username, :pass, :nivel)";
+                                (:nome, :data_nasc, :cpf, :rg, :tel)";
         
-        $cadastrar_user = $conn -> prepare($query_users);
+        $cadastrar_cliente = $conn -> prepare($query_cliente);
 
-        $cadastrar_user->bindParam(':username', $data['username']);
-        $cadastrar_user->bindParam(':pass', md5($password));
-        $cadastrar_user->bindParam(':nivel', $data['nivel']);
+        $cadastrar_cliente->bindParam(':nome', $data['nome']);
+        $cadastrar_cliente->bindParam(':data_nasc', $data['dataNascimento']);
+        $cadastrar_cliente->bindParam(':cpf', $data['cpf']);
+        $cadastrar_cliente->bindParam(':rg', $data['rg']);
+        $cadastrar_cliente->bindParam(':tel', $data['telefone']);
 
+        $cadastrar_cliente -> execute();
 
-        $cadastrar_user -> execute();
-
-        if($cadastrar_user -> rowCount()){
+        if($cadastrar_cliente -> rowCount()){
             $response = [
                 "error" => false,
                 "message" => "Instance saved success"
@@ -49,6 +48,5 @@
     }
 
     http_response_code(200);
-    echo json_encode($response);
-
+    echo json_encode($data);
 ?>

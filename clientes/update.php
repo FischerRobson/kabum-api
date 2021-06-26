@@ -5,31 +5,32 @@
     header("Access-Control-Allow-Headers: *");
     header("Access-Control-Allow-Methods: GET,PUT,POST,DELETE");
 
-    include("connection.php");
+    include("../connection.php");
 
     $response_json = file_get_contents("php://input");
     $data = json_decode($response_json, true);
 
     if($data){
-        
-        $password = $data['password'];
-        $password_crypted = md5($password);
-    
-        $query_update_users = "UPDATE users SET 
-                                    Username= :username,
-                                    Password= :pass,
-                                    Nivel= :nivel
+            
+        $query_update_cliente = "UPDATE clientes SET 
+                                    Nome= :nome,
+                                    DataNascimento= :data_nasc,
+                                    Cpf= :cpf,
+                                    Rg= :rg,
+                                    Telefone= :tel
                                     WHERE Id= :id";
 
-        $update_user = $conn -> prepare($query_update_users);
-        $update_user->bindParam(':username', $data['username']);
-        $update_user->bindParam(':pass', $password_crypted);
-        $update_user->bindParam(':nivel', $data['nivel']);
-        $update_user->bindParam(':id', $data['id']);
+        $update_cliente = $conn -> prepare($query_update_cliente);
+        $update_cliente->bindParam(':nome', $data['nome']);
+        $update_cliente->bindParam(':data_nasc', $data['dataNascimento']);
+        $update_cliente->bindParam(':cpf', $data['cpf']);
+        $update_cliente->bindParam(':rg', $data['rg']);
+        $update_cliente->bindParam(':tel', $data['telefone']);
+        $update_cliente->bindParam(':id', $data['id']);
 
-        $update_user->execute();
+        $update_cliente->execute();
 
-        if($update_user -> rowCount()){
+        if($update_cliente -> rowCount()){
             $response = [
                 "error" => false,
                 "message" => "Instance changed success"

@@ -3,7 +3,7 @@
     header("Access-Control-Allow-Origin: *");
     header("Content-type: application/json; charset=UTF-8");
     
-    include("connection.php");
+    include("../connection.php");
 
     $query_clientes = "SELECT * FROM clientes";
     $result_clientes = $conn->prepare($query_clientes);

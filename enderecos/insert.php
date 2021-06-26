@@ -5,7 +5,7 @@
     header("Access-Control-Allow-Headers: *");
     header("Access-Control-Allow-Methods: GET,PUT,POST,DELETE");
 
-    include("connection.php");
+    include("../connection.php");
 
     $response_json = file_get_contents("php://input");
     $data = json_decode($response_json, true);

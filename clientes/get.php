@@ -3,7 +3,7 @@
     header("Access-Control-Allow-Origin: *");
     header("Content-type: application/json; charset=UTF-8");
     
-    include("connection.php");
+    include("../connection.php");
 
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
     $response = "";
