@@ -180,4 +180,37 @@
 
         return $response;
     }
+
+    function findByCpf($cpf){
+        include("../connection.php");
+        
+        $response = "";
+
+        $query_cliente = "SELECT * FROM clientes WHERE Cpf= :cpf LIMIT 1";
+        $result_cliente = $conn->prepare($query_cliente);
+        $result_cliente->bindParam(':cpf', $cpf, PDO::PARAM_INT);
+        $result_cliente->execute();
+
+        if(($result_cliente) AND ($result_cliente->rowCount() != 0)){
+            $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
+            extract($row_cliente);
+        
+            $cliente = [
+                'id' => $Id,  
+                'nome' => $Nome,
+                'cpf' => $Cpf,
+            ];
+        
+            $response = [
+                "cliente" => $cliente,
+                "exists" => true,
+            ];
+        } else{
+            $response = [
+                "exists" => false,
+            ];
+        }
+
+        return $response;
+    }
 ?>
