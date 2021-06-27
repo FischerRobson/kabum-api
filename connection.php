@@ -9,6 +9,4 @@
 
     $conn = new PDO("mysql:host=$host;post=$port;dbname=" . $dbname, $user);
 
-    
-
 ?>
