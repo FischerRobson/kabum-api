@@ -62,7 +62,7 @@ git clone https://github.com/FischerRobson/kabum-api.git
     <li>Clique na opção Escolher arquivo<br/>
       <img src=".github/escolher_arquivo.png" alt="login no pgpmyadmin" />  
     </li>
-    <li>Selecione o arquivo db.sql<br/>
+    <li>Selecione o arquivo db.sql caso esteja utilizando o Wamp, ou o arquivo db_xampp.sql no caso do Xampp<br/>
       <img src=".github/arquivo.png" alt="login no pgpmyadmin" />  
     </li>
     <li>Clique em executar para finalizar a importação<br/>
